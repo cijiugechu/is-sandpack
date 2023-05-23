@@ -1,15 +1,13 @@
-import { hostname, cpus } from 'os'
-
-const isSandPack = () => {
-  if(typeof process === 'undefined') {
+const isSandPack = (): boolean => {
+  if(typeof globalThis.process === 'undefined') {
     return false
   }
 
-  if(hostname() !== 'nodebox') {
+  if(globalThis.os.hostname() !== 'nodebox') {
     return false
   }
 
-  return cpus().every(cpu => cpu.model === 'Virtual CPU')
+  return globalThis.os.cpus().every(cpu => cpu.model === 'Virtual CPU')
 }
 
 export {
