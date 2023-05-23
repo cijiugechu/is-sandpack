@@ -1,6 +1,6 @@
 {
   "name": "is-sandpack",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Check if the process is running inside Sandpack",
   "private": false,
   "main": "./dist/index.js",
